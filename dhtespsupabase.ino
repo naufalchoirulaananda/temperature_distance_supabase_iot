@@ -10,12 +10,12 @@
 #define TRIG_PIN 26  // Define trigger pin for ultrasonic sensor
 #define ECHO_PIN 25  // Define echo pin for ultrasonic sensor
 
-const char* ssid = "spontan.";
-const char* password = "uuuhhhuuuyyy";
+const char* ssid = "your_SSID";
+const char* password = "your_PASSWORD";
 
 // Supabase Configuration
-String API_URL = "https://wxyppqhivrpjjnsqxurd.supabase.co";
-String API_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Ind4eXBwcWhpdnJwampuc3F4dXJkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA4NDIwOTUsImV4cCI6MjAyNjQxODA5NX0.iuTibKM3GLVuqq7HgotmZ6LhWf6ftc4cxFGDuWvOop0";
+String API_URL = "https://your_supabase_project_url";
+String API_KEY = "your_supabase_api_key";
 String TableName = "datasensor";
 const int httpsPort = 443;
 
@@ -73,8 +73,7 @@ void loop() {
 
     plantHeight = 100.0 - distance;
     
-
-    https.begin(client,API_URL+"/rest/v1/"+TableName);
+    https.begin(client, API_URL + "/rest/v1/" + TableName);
     https.addHeader("Content-Type", "application/json");
     https.addHeader("Prefer", "return=representation");
     https.addHeader("apikey", API_KEY);
